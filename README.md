@@ -1,16 +1,79 @@
-# React + Vite
+# Tenzies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based dice game where players roll until all dice show the same number.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tenzies is a fast-paced dice game where players must get all 10 dice to display the same value. Click on dice to "freeze" them at their current value, then roll the remaining dice until all match.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 10 randomly generated dice
+- Click to hold/unhold individual dice
+- Automatic win detection
+- Confetti celebration on victory
+- New game functionality
+- Accessibility support with screen reader announcements
+- Keyboard focus management
 
-## Expanding the ESLint configuration
+## Installation
+```bash
+npm install react react-dom nanoid react-confetti
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+1. Roll the dice by clicking the "Roll" button
+2. Click on any dice you want to keep (they turn green)
+3. Roll again to change the unheld dice
+4. Continue until all dice show the same number
+5. Click "New Game" to play again
+
+## Game Rules
+
+- All 10 dice must show the same value to win
+- Held dice maintain their value between rolls
+- Only unheld dice change when rolling
+- Click held dice to unhold them
+
+## Technologies
+
+- React (Hooks: useState, useRef, useEffect)
+- nanoid (unique ID generation)
+- react-confetti (win celebration)
+
+## Component Structure
+```
+src/
+├── App.jsx
+├── Dice.jsx
+└── index.css
+```
+
+## State Management
+
+- `dice`: Array of 10 dice objects with value, isHeld, and id properties
+- `gameWon`: Derived state checking if all dice match and are held
+
+## Key Functions
+
+- `generateAllNewDice()`: Creates array of 10 random dice objects
+- `hold(id)`: Toggles the held state of a specific die
+- `rollDice()`: Rolls unheld dice or starts new game if won
+
+## Accessibility
+
+- ARIA live region for win announcement
+- Screen reader support
+- Automatic focus on "New Game" button after winning
+
+## Browser Support
+
+Requires modern browser with ES6+ and React 16.8+ support.
+
+## License
+
+Available for educational and personal use.
+
+## Acknowledgments
+- React team for the framework
