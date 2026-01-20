@@ -2,6 +2,11 @@
 
 A fun and interactive dice game built with React where players roll dice until all ten dice show the same number.
 
+## 🌐 Demo
+
+🔗 **Live Demo:** [Tenzies Website](https://tenziesbg.netlify.app/)
+
+---
 ## 🎮 Game Rules
 
 1. Roll the dice to get random values (1-6)
