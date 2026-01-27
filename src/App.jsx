@@ -35,7 +35,7 @@ const App = () => {
   }
   function hold(id){
     setDice(oldDice =>  oldDice.map(die =>{
-      return die.id === id ? {...die , isHeld:!die.isHeld} : die
+      return die.id === id ? {...die ,  isHeld : !die.isHeld} : die
     }))
   }
   function rollDice(){

@@ -111,11 +111,6 @@ You can customize:
 
 The game is designed to work on various screen sizes. Ensure your CSS includes appropriate breakpoints for mobile, tablet, and desktop views.
 
-## 🙏 Acknowledgments
-
-- Inspired by the classic Tenzies dice game
-- Built as a learning project for React fundamentals
-
 ---
 
 **Enjoy the game! 🎲🎉**
